@@ -1,0 +1,65 @@
+
+select {
+    margin-right: 5px;
+    /* Set the width and height of the select box */
+    min-width: 200px;
+    min-height: 40px;
+    
+    /* Remove the default border */
+    border: none;
+    border-radius: 0;
+    
+    /* Add a border bottom and a light gray background */
+    border-bottom: 1px solid lightgray;
+    background-color: #f6f6f6;
+    
+    /* Add a custom arrow */
+    /* background: url('path/to/arrow.svg') no-repeat right center / 20px auto; */
+    
+    /* Add some padding to the left of the text */
+    padding: 0 20px 0 10px;
+    
+    /* Change the font and font size */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    
+    /* Style the dropdown arrow when the select box is open */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  
+
+.header-container {
+    display: flex;
+    position: sticky;
+    min-height: 50px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.option-box-container{
+    display: flex;
+
+}
+
+
+.option-box-container > button {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px;
+}
