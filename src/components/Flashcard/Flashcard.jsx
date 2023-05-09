@@ -1,5 +1,7 @@
 
 import React, {useState, useEffect, useRef} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckSquare, faCheck, faBars, faCircleHalfStroke} from '@fortawesome/free-solid-svg-icons'
 
 import data from '../Data/Data'
 import COLOSIANS from '../Data/Colossians/Colosians'
@@ -18,6 +20,8 @@ function Flashcard({flashcard}) {
     setHeight(Math.max(frontHeight, backHeight, 100))
   }
 
+  
+
 
   useEffect(setMaxHeight, [flashcard.question, flashcard.answer, flashcard.options])
   useEffect(() => {
@@ -34,12 +38,16 @@ function Flashcard({flashcard}) {
 
         <div className = 'flashcard-options'>
           {flashcard.options.map(option => 
-              <div className = 'flashcard-option' key={option}>{option}</div>
+              <div className = 'flashcard-option' key={option}>
+                <FontAwesomeIcon icon={faBars} style={{'paddingRight':'5px', 'color': 'blue'}} className='fa-solid'/>
+                {option}
+              </div>
             )}
         </div>
       </div>
 
       <div className = 'back' ref = {backEl}>
+      <FontAwesomeIcon icon={faCheckSquare} style={{'paddingRight':'3px', 'color': 'red'}} />
         {flashcard.answer}
       </div>
 

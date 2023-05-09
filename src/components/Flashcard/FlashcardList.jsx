@@ -1,5 +1,5 @@
 
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 
 import COLOSIANS from '../Data/Colossians/Colosians'
 import ESTHER from '../Data/Esther/Esther'
@@ -14,9 +14,45 @@ function FlashcardList() {
   const categoryEl = useRef()
   const amountEl = useRef()
 
+  const [maxLength, setMaxLength] = useState(5)
+
+  const [selectedOption, setSelectedOption] = useState('');
+
+  // useEffect(() => {
+  //   // add an event listener to detect changes in the dropdown
+  //   const dropdown = document.getElementById('category');
+  //   dropdown.addEventListener('change', handleDropdownChange);
+
+  //   if (categoryEl.current.value.toLowerCase() === 'colosians'){
+  //     setMaxLength(() => 35)
+  //   }
+  //   else if (categoryEl.current.value.toLowerCase() === 'esther'){
+  //     setMaxLength(() => 43)
+  //   }
+  //   else{
+  //     setMaxLength(10)
+  //   }
+
+  //   // cleanup function to remove the event listener when the component unmounts
+  //   return () => {
+  //     dropdown.removeEventListener('change', handleDropdownChange);
+  //   };
+  // }, []);
+
+  // const handleDropdownChange = (event) => {
+  //   setSelectedOption(event.target.value);
+  //   window.location.reload(); // refresh the page
+  // };
+
+  // useEffect(() => {
+  //   getMaxLength()
+
+  // }, [categoryEl])
 
   function handleSubmit(e){
     e.preventDefault()
+
+    console.log(categories.length)
 
     // const tmp = data.filter(function (selected) {
     //   return selected.label === categoryEl.current.value;
@@ -24,36 +60,34 @@ function FlashcardList() {
 
     if (categoryEl.current.value.toLowerCase() === 'colosians'){
       setCategories(COLOSIANS)
+      setMaxLength(35)
     }
     else if (categoryEl.current.value.toLowerCase() === 'esther'){
       setCategories(ESTHER)
+      setMaxLength(43)
     }
     else{
       setCategories([])
     }
 
-    // setCategories(tmp)
-    console.log(categories)
+    // getMaxLength()
 
-    // console.log(amountEl.current.value)
-    // console.log(categoryEl.current.value)
-    // console.log(categories.length)
-    
-    // tmp.map(res => {
-    //   res.value.map(el => {
-    //     console.log(el.question)
-    //   })
-    // })
+    // setCategories(tmp)
+    console.log(categories.length)
 
   }
     
+  // function getMaxLength() {
+  //   return setMaxLength((prev) => Math.max(categories.length, prev))
+  // } 
+
   return (
 
     <>
       <form className="header" onSubmit={handleSubmit}>
         <div className='form-group'>
           <label htmlFor="category">Category</label>
-          <select id="category" ref={categoryEl}>
+          <select id="category" ref={categoryEl} onChange={handleSubmit}>
             {data.map(category => {
               return <option value={category.label} key={category.label}>{category.label}</option>
             }
@@ -64,7 +98,7 @@ function FlashcardList() {
 
         <div className='form-group'>
           <label htmlFor="amount">Number of Questions</label>
-          <input type="number" id="amount" min="1" step="1" defaultValue={1} ref={amountEl} max={3}/>
+          <input type="number" id="amount" min="1" step="1" defaultValue={1} ref={amountEl} max={maxLength}/>
         </div>
 
         <div className='form-group'>
