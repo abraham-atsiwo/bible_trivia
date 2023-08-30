@@ -15,4 +15,4 @@ const data = [
     {label: 'General Bible Knowledge', value: GENERAL_BIBLE_KNOWLEDGE}
 ]
 
-export default GENERAL_BIBLE_KNOWLEDGE
+export default data
