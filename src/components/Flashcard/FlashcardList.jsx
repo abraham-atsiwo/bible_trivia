@@ -3,6 +3,8 @@ import React, {useState, useRef, useEffect} from 'react'
 
 import COLOSIANS from '../Data/Colossians/Colosians'
 import ESTHER from '../Data/Esther/Esther'
+import GENERAL_BIBLE_KNOWLEDGE from '../Data/GeneralBibleKnowledge/GeneralBibleKnowledge'
+import CHURCH_HISTORY from '../Data/ChurchHistory/ChurchHistory'
 
 import data from '../Data/Data'
 import Flashcard from './Flashcard'
@@ -64,6 +66,14 @@ function FlashcardList() {
     }
     else if (categoryEl.current.value.toLowerCase() === 'esther'){
       setCategories(ESTHER)
+      setMaxLength(43)
+    }
+    else if (categoryEl.current.value.toLowerCase() === 'general bible knowledge'){
+      setCategories(GENERAL_BIBLE_KNOWLEDGE)
+      setMaxLength(43)
+    }
+    else if (categoryEl.current.value.toLowerCase() === 'church history'){
+      setCategories(CHURCH_HISTORY)
       setMaxLength(43)
     }
     else{
