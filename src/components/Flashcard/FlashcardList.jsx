@@ -97,8 +97,8 @@ function FlashcardList() {
         </div>
 
         <div className='form-group'>
-          <label htmlFor="amount">Number of Questions</label>
-          <input type="number" id="amount" min="1" step="1" defaultValue={1} ref={amountEl} max={maxLength}/>
+          <label htmlFor="amount" style={{'display': 'none'}}>Number of Questions</label>
+          <input type="number" id="amount" min="1" step="1" defaultValue={1} ref={amountEl} max={maxLength} style={{'display': 'none'}}/>
         </div>
 
         <div className='form-group'>
