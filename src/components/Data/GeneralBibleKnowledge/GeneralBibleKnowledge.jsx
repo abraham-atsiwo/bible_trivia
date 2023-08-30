@@ -1,6 +1,6 @@
 
 
-const COLOSIANS = [
+const GENERAL_BIBLE_KNOWLEDGE = [
         {
             id:1,
             question: 'Who is the letter to the Colossians from?',

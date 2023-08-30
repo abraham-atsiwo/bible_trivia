@@ -1,6 +1,6 @@
 
 
-const COLOSIANS = [
+const CHURCH_HISTORY = [
         {
             id:1,
             question: 'Who is the letter to the Colossians from?',
