@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bible_trivia/static/css/main.a53b7720.css",
-    "main.js": "/bible_trivia/static/js/main.51131876.js",
+    "main.js": "/bible_trivia/static/js/main.b0bdf065.js",
     "index.html": "/bible_trivia/index.html",
     "main.a53b7720.css.map": "/bible_trivia/static/css/main.a53b7720.css.map",
-    "main.51131876.js.map": "/bible_trivia/static/js/main.51131876.js.map"
+    "main.b0bdf065.js.map": "/bible_trivia/static/js/main.b0bdf065.js.map"
   },
   "entrypoints": [
     "static/css/main.a53b7720.css",
-    "static/js/main.51131876.js"
+    "static/js/main.b0bdf065.js"
   ]
 }
